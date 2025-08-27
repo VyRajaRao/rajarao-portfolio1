@@ -73,7 +73,7 @@ const Projects = () => {
     },
     {
       id: "iit-seat-allotment",
-      title: "College Seat Allotment (IIT)",
+      title: "JEE Advisor Seat-Allotment (IIT)",
       summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
       description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
       technologies: ["Python", "JavaScript", "Data Analysis", "Kaggle Dataset", "Flask"],
@@ -92,7 +92,8 @@ const Projects = () => {
         "Created accurate predictions with 90%+ reliability",
         "Helped 100+ students in the testing phase"
       ],
-      sourceCode: "https://github.com/VyRajaRao/iit-seat-allotment"
+      liveDemo: "https://jee-advisor1.vercel.app/",
+      sourceCode: "https://github.com/VyRajaRao/jee-advisor1.git"
     }
   ];
 
