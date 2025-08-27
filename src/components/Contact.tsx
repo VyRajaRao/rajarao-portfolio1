@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,7 +17,6 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Missing fields",
@@ -25,18 +25,31 @@ const Contact = () => {
       });
       return;
     }
-
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    emailjs.send(
+      'service_x4bewkj',
+      'template_wz1rlwk',
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message
+      },
+      'j1YarIKgApIHXEp_Q'
+    ).then(() => {
       toast({
         title: "Message sent successfully!",
         description: "Thanks for reaching out. I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
-    }, 1000);
+    }).catch(() => {
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive"
+      });
+      setIsSubmitting(false);
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

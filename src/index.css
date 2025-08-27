@@ -2,128 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Raja's Portfolio Design System - Dark Tech Theme with VIBGYOR Neon Accents */
 
-@layer base {
-  :root {
-    /* Core Dark Theme */
-    --background: 220 25% 6%;          /* #0B0F14 */
-    --background-alt: 220 27% 8%;      /* #0E131A */
-    --foreground: 220 15% 90%;         /* #E6EDF3 */
-    --foreground-muted: 220 10% 70%;   /* #A9B2BD */
+:root {
+  /* Core Dark Theme */
+  --background: 220 25% 6%;
+  --background-alt: 220 27% 8%;
+  --foreground: 220 15% 90%;
+  --foreground-muted: 220 10% 70%;
 
-    /* Glass Cards */
-    --card: 220 25% 8%;
-    --card-foreground: 220 15% 90%;
-    --card-border: 220 20% 15%;
+  /* Glass Cards */
+  --card: 220 25% 8%;
+  --card-foreground: 220 15% 90%;
+  --card-border: 220 20% 15%;
 
-    /* Interactive Elements */
-    --primary: 220 15% 90%;
-    --primary-foreground: 220 25% 6%;
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 220 15% 90%;
+  /* Interactive Elements */
+  --primary: 220 15% 90%;
+  --primary-foreground: 220 25% 6%;
+  --secondary: 220 20% 15%;
+  --secondary-foreground: 220 15% 90%;
 
-    /* VIBGYOR Neon Accents */
-    --neon-red: 0 100% 65%;      /* #FF4D4F */
-    --neon-orange: 20 100% 60%;  /* #FF8C37 */
-    --neon-yellow: 50 100% 62%;  /* #FFD23F */
-    --neon-green: 150 100% 60%;  /* #00E676 */
-    --neon-cyan: 190 100% 60%;   /* #00E5FF */
-    --neon-blue: 215 100% 60%;   /* #2979FF */
-    --neon-violet: 280 70% 55%;  /* #9C27B0 */
+  /* VIBGYOR Neon Accents */
+  --neon-red: 0 100% 65%;
+  --neon-orange: 20 100% 60%;
+  --neon-yellow: 50 100% 62%;
+  --neon-green: 150 100% 60%;
+  --neon-cyan: 190 100% 60%;
+  --neon-blue: 215 100% 60%;
+  --neon-violet: 280 70% 55%;
 
-    /* Special Gradients */
-    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-violet)), hsl(var(--neon-blue)), hsl(var(--neon-cyan)), hsl(var(--neon-green)));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(var(--neon-blue) / 0.1), transparent 50%);
-    --gradient-card: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
+  /* Special Gradients */
+  --gradient-neon: linear-gradient(135deg, hsl(var(--neon-violet)), hsl(var(--neon-blue)), hsl(var(--neon-cyan)), hsl(var(--neon-green)));
+  --gradient-hero: radial-gradient(ellipse at top, hsl(var(--neon-blue) / 0.1), transparent 50%);
+  --gradient-card: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
 
-    /* Glassmorphism */
-    --glass-bg: hsl(var(--card) / 0.6);
-    --glass-border: hsl(var(--card-border) / 0.3);
-    --glass-shadow: 0 8px 32px hsl(var(--background) / 0.3);
+  /* Glassmorphism */
+  --glass-bg: hsl(var(--card) / 0.6);
+  --glass-border: hsl(var(--card-border) / 0.3);
+  --glass-shadow: 0 8px 32px hsl(var(--background) / 0.3);
 
-    /* Animation & Effects */
-    --glow-shadow: 0 0 20px;
-    --hover-glow: 0 0 30px;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Animation & Effects */
+  --glow-shadow: 0 0 20px;
+  --hover-glow: 0 0 30px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 220 20% 15%;
-    --accent-foreground: 220 15% 90%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 220 15% 90%;
-    --border: 220 20% 15%;
-    --input: 220 20% 15%;
-    --ring: 215 100% 60%;
+  --muted: 220 20% 15%;
+  --muted-foreground: 220 10% 60%;
+  --accent: 220 20% 15%;
+  --accent-foreground: 220 15% 90%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 220 15% 90%;
+  --border: 220 20% 15%;
+  --input: 220 20% 15%;
+  --ring: 215 100% 60%;
+  --radius: 1rem;
 
-    --radius: 1rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
+
+
+
+
 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground font-inter overflow-x-hidden;
   }
+}
 
   /* Glassmorphism Base */
   .glass-card {
@@ -204,4 +161,3 @@
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--neon-blue) / 0.8);
   }
-}

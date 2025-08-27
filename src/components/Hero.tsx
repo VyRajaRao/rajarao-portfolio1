@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
-import rajaProfile from "@/assets/raja-profile.jpg";
+import rajaProfile from "@/assets/raja-profile.png";
 
 const Hero = () => {
   const scrollToProjects = () => {
