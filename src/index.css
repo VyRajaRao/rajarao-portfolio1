@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Raja's Portfolio Design System - Dark Tech Theme with VIBGYOR Neon Accents */
-
 :root {
   /* Core Dark Theme */
   --background: 220 25% 6%;

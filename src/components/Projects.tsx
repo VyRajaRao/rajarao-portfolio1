@@ -68,8 +68,8 @@ const Projects = () => {
         "Created responsive design that works on mobile and desktop",
         "Implemented geolocation for automatic weather detection"
       ],
-      liveDemo: "https://weather-app-demo.netlify.app",
-      sourceCode: "https://github.com/VyRajaRao/weather-api-app"
+      liveDemo: "https://weather-api-gules-chi.vercel.app/",
+      sourceCode: "https://github.com/VyRajaRao/weather-api"
     },
     {
       id: "iit-seat-allotment",
