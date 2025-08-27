@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Raja's Portfolio Design System - Dark Tech Theme with VIBGYOR Neon Accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Dark Theme */
+    --background: 220 25% 6%;          /* #0B0F14 */
+    --background-alt: 220 27% 8%;      /* #0E131A */
+    --foreground: 220 15% 90%;         /* #E6EDF3 */
+    --foreground-muted: 220 10% 70%;   /* #A9B2BD */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass Cards */
+    --card: 220 25% 8%;
+    --card-foreground: 220 15% 90%;
+    --card-border: 220 20% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Interactive Elements */
+    --primary: 220 15% 90%;
+    --primary-foreground: 220 25% 6%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 15% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* VIBGYOR Neon Accents */
+    --neon-red: 0 100% 65%;      /* #FF4D4F */
+    --neon-orange: 20 100% 60%;  /* #FF8C37 */
+    --neon-yellow: 50 100% 62%;  /* #FFD23F */
+    --neon-green: 150 100% 60%;  /* #00E676 */
+    --neon-cyan: 190 100% 60%;   /* #00E5FF */
+    --neon-blue: 215 100% 60%;   /* #2979FF */
+    --neon-violet: 280 70% 55%;  /* #9C27B0 */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Special Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-violet)), hsl(var(--neon-blue)), hsl(var(--neon-cyan)), hsl(var(--neon-green)));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(var(--neon-blue) / 0.1), transparent 50%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Glassmorphism */
+    --glass-bg: hsl(var(--card) / 0.6);
+    --glass-border: hsl(var(--card-border) / 0.3);
+    --glass-shadow: 0 8px 32px hsl(var(--background) / 0.3);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Animation & Effects */
+    --glow-shadow: 0 0 20px;
+    --hover-glow: 0 0 30px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 220 20% 15%;
+    --accent-foreground: 220 15% 90%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220 15% 90%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 215 100% 60%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,86 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+  }
+
+  /* Glassmorphism Base */
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-blue {
+    box-shadow: var(--glow-shadow) hsl(var(--neon-blue) / 0.3);
+  }
+
+  .neon-glow-violet {
+    box-shadow: var(--glow-shadow) hsl(var(--neon-violet) / 0.3);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: var(--glow-shadow) hsl(var(--neon-cyan) / 0.3);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-glow) hsl(var(--neon-blue) / 0.2);
+  }
+
+  /* Animation Classes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--neon-blue) / 0.5);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--neon-blue) / 0.8);
   }
 }
