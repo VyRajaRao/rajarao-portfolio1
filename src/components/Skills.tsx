@@ -116,20 +116,11 @@ const Skills = () => {
                       onMouseEnter={() => setHoveredSkill(skill.name)}
                       onMouseLeave={() => setHoveredSkill(null)}
                     >
-                      {/* Skill Name & Level */}
-                      <div className="flex justify-between items-center mb-2">
+                      {/* Skill Name */}
+                      <div className="mb-2">
                         <span className="font-medium text-foreground group-hover:text-neon-blue transition-colors">
                           {skill.name}
                         </span>
-                        <span className="text-sm text-foreground-muted">{skill.level}%</span>
-                      </div>
-
-                      {/* Progress Bar */}
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className={`h-full bg-gradient-to-r from-neon-${category.color} to-neon-${category.color}/70 rounded-full transition-all duration-700 ease-out`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
                       </div>
 
                       {/* Description (on hover) */}
