@@ -200,7 +200,7 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3 items-center justify-start">
                   <Button
                     variant="outline"
                     size="sm"
@@ -342,7 +342,7 @@ const Projects = () => {
               </div>
 
               {/* Action Links */}
-              <div className="flex gap-4 pt-4 border-t border-card-border">
+              <div className="flex flex-wrap gap-3 pt-4 border-t border-card-border items-center justify-start">
                 {selectedProject.liveDemo && (
                   <Button variant="neon" asChild>
                     <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">
