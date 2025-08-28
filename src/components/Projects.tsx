@@ -94,7 +94,38 @@ const Projects = () => {
         "Recommended effective mitigation strategies to strengthen security posture"
       ],
   pdfReport: "/reports/cybersecurity-nmaps-report.pdf"
-    }
+    },
+    {
+  id: "JEE-advisor",
+  title: "JEE Advisor Predictiion and Comparing Tool",
+  summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
+  description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
+  technologies: [
+    "Python",
+    "JavaScript",
+    "Data Analysis",
+    "Kaggle Dataset",
+    "Flask"
+  ],
+  category: "Data Science",
+  icon: "Code",
+  color: "green",
+  problem: "Students struggle to choose the right IIT and branch combination based on their rank due to complex historical data patterns.",
+  solution: "Developed a recommendation system that analyzes historical opening and closing ranks to suggest the best possible IIT options for a given rank.",
+  challenges: [
+    "Processing and cleaning large datasets from multiple years",
+    "Creating accurate prediction algorithms based on historical trends",
+    "Building an intuitive interface for rank-based recommendations"
+  ],
+  "outcomes": [
+    "Processed 5+ years of IIT admission data",
+    "Created accurate predictions with 90%+ reliability",
+    "Helped 100+ students in the testing phase"
+  ],
+  "liveDemo": "https://jee-advisor1.vercel.app/",
+  "sourceCode": "https://github.com/VyRajaRao/jee-advisor1.git"
+}
+
   ];
 
   const getColorClasses = (color: string) => {
