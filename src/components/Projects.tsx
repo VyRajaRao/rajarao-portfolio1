@@ -18,6 +18,7 @@ interface Project {
   outcomes: string[];
   liveDemo?: string;
   sourceCode?: string;
+  pdfReport?: string;
 }
 
 const Projects = () => {
@@ -72,52 +73,27 @@ const Projects = () => {
       sourceCode: "https://github.com/VyRajaRao/weather-api"
     },
     {
-      id: "iit-seat-allotment",
-      title: "JEE Advisor Seat-Allotment (IIT)",
-      summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
-      description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
-      technologies: ["Python", "JavaScript", "Data Analysis", "Kaggle Dataset", "Flask"],
-      category: "Data Science",
+      id: "cybersecurity-nmaps-report",
+      title: "Cyber Security Nmaps Enumeration, Web Application Penetration Testing and Vulnerability Analysis Report",
+      summary: "Comprehensive security assessment report covering network enumeration, web application penetration testing, and vulnerability analysis.",
+      description: "A detailed cyber security project that identifies potential threats through Nmap scanning, evaluates web applications for security flaws, and provides actionable insights for mitigating vulnerabilities.",
+      technologies: ["Nmap", "Burp Suite", "OWASP ZAP", "Kali Linux", "Python", "Web Security Tools"],
+      category: "Cyber Security",
       icon: Code,
       color: "green",
-      problem: "Students struggle to choose the right IIT and branch combination based on their rank due to complex historical data patterns.",
-      solution: "Developed a recommendation system that analyzes historical opening and closing ranks to suggest the best possible IIT options for a given rank.",
+      problem: "Organizations often face risks due to unpatched vulnerabilities, weak configurations, and insecure web applications that attackers can exploit.",
+      solution: "Performed systematic network enumeration using Nmap, conducted web application penetration tests following OWASP standards, and analyzed vulnerabilities with remediation strategies.",
       challenges: [
-        "Processing and cleaning large datasets from multiple years",
-        "Creating accurate prediction algorithms based on historical trends",
-        "Building an intuitive interface for rank-based recommendations"
+        "Detecting open ports and services in complex network environments",
+        "Identifying hidden web application vulnerabilities such as SQL Injection, XSS, and CSRF",
+        "Mapping vulnerabilities to severity levels with actionable fixes"
       ],
       outcomes: [
-        "Processed 5+ years of IIT admission data",
-        "Created accurate predictions with 90%+ reliability",
-        "Helped 100+ students in the testing phase"
+        "Discovered misconfigurations and critical vulnerabilities across test environments",
+        "Provided a detailed vulnerability assessment report with CVSS scoring",
+        "Recommended effective mitigation strategies to strengthen security posture"
       ],
-      liveDemo: "https://jee-advisor1.vercel.app/",
-      sourceCode: "https://github.com/VyRajaRao/jee-advisor1.git"
-    },
-    {
-      id: "iit-seat-allotment",
-      title: "JEE Advisor Seat-Allotment (IIT)",
-      summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
-      description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
-      technologies: ["Python", "JavaScript", "Data Analysis", "Kaggle Dataset", "Flask"],
-      category: "Data Science",
-      icon: Code,
-      color: "green",
-      problem: "Students struggle to choose the right IIT and branch combination based on their rank due to complex historical data patterns.",
-      solution: "Developed a recommendation system that analyzes historical opening and closing ranks to suggest the best possible IIT options for a given rank.",
-      challenges: [
-        "Processing and cleaning large datasets from multiple years",
-        "Creating accurate prediction algorithms based on historical trends",
-        "Building an intuitive interface for rank-based recommendations"
-      ],
-      outcomes: [
-        "Processed 5+ years of IIT admission data",
-        "Created accurate predictions with 90%+ reliability",
-        "Helped 100+ students in the testing phase"
-      ],
-      liveDemo: "https://jee-advisor1.vercel.app/",
-      sourceCode: "https://github.com/VyRajaRao/jee-advisor1.git"
+  pdfReport: "/reports/cybersecurity-nmaps-report.pdf"
     }
   ];
 
@@ -161,7 +137,7 @@ const Projects = () => {
                 <h3 className="font-poppins font-semibold text-lg text-foreground mb-3 group-hover:text-neon-blue transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-foreground-muted text-sm mb-4 leading-relaxed">
                   {project.summary}
                 </p>
@@ -169,7 +145,7 @@ const Projects = () => {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-1 mb-6">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-2 py-1 rounded text-xs bg-muted text-foreground-muted"
                     >
@@ -185,8 +161,8 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     onClick={() => setSelectedProject(project)}
                     className="flex-1"
@@ -194,7 +170,7 @@ const Projects = () => {
                     <Eye className="mr-2 h-4 w-4" />
                     View Details
                   </Button>
-                  
+
                   {project.liveDemo && (
                     <Button variant="ghost" size="sm" asChild>
                       <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
@@ -202,10 +178,17 @@ const Projects = () => {
                       </a>
                     </Button>
                   )}
-                  
+
                   {project.sourceCode && (
                     <Button variant="ghost" size="sm" asChild>
                       <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
+                  {project.pdfReport && (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.pdfReport} target="_blank" rel="noopener noreferrer" download>
                         <Github className="h-4 w-4" />
                       </a>
                     </Button>
@@ -223,7 +206,7 @@ const Projects = () => {
               Want to see more?
             </h3>
             <p className="text-foreground-muted mb-6">
-              These are just highlights from my portfolio. I'm constantly working on new projects 
+              These are just highlights from my portfolio. I'm constantly working on new projects
               and exploring different technologies. Check out my GitHub for the complete collection.
             </p>
             <Button variant="neon" asChild>
@@ -250,8 +233,8 @@ const Projects = () => {
                   {selectedProject.title}
                 </h3>
               </div>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="sm"
                 onClick={() => setSelectedProject(null)}
               >
@@ -332,6 +315,14 @@ const Projects = () => {
                     <a href={selectedProject.sourceCode} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Source Code
+                    </a>
+                  </Button>
+                )}
+                {selectedProject.pdfReport && (
+                  <Button variant="secondary" asChild className="download-pdf">
+                    <a href={selectedProject.pdfReport} target="_blank" rel="noopener noreferrer" download>
+                      <Github className="mr-2 h-4 w-4" />
+                      Download PDF
                     </a>
                   </Button>
                 )}
