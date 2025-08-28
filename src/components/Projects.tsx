@@ -18,7 +18,7 @@ interface Project {
   outcomes: string[];
   liveDemo?: string;
   sourceCode?: string;
-  pdfReport?: string;
+  pdfReport?: { name: string; url: string }[];
 }
 
 const Projects = () => {
@@ -93,38 +93,47 @@ const Projects = () => {
         "Provided a detailed vulnerability assessment report with CVSS scoring",
         "Recommended effective mitigation strategies to strengthen security posture"
       ],
-  pdfReport: "/reports/cybersecurity-nmaps-report.pdf"
+      pdfReport: [
+    {
+      name: "Web App Pentest Report",
+      url: "https://drive.google.com/file/d/1QYHppHBtN52UPd0qAPmsHqj3Ja-F3_uZ/view?usp=drive_link"
     },
     {
-  id: "JEE-advisor",
-  title: "JEE Advisor Predictiion and Comparing Tool",
-  summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
-  description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
-  technologies: [
-    "Python",
-    "JavaScript",
-    "Data Analysis",
-    "Kaggle Dataset",
-    "Flask"
-  ],
-  category: "Data Science",
-  icon: "Code",
-  color: "green",
-  problem: "Students struggle to choose the right IIT and branch combination based on their rank due to complex historical data patterns.",
-  solution: "Developed a recommendation system that analyzes historical opening and closing ranks to suggest the best possible IIT options for a given rank.",
-  challenges: [
-    "Processing and cleaning large datasets from multiple years",
-    "Creating accurate prediction algorithms based on historical trends",
-    "Building an intuitive interface for rank-based recommendations"
-  ],
-  "outcomes": [
-    "Processed 5+ years of IIT admission data",
-    "Created accurate predictions with 90%+ reliability",
-    "Helped 100+ students in the testing phase"
-  ],
-  "liveDemo": "https://jee-advisor1.vercel.app/",
-  "sourceCode": "https://github.com/VyRajaRao/jee-advisor1.git"
-}
+      name: "Nmap and VAPT Report",
+      url: "https://drive.google.com/file/d/1m4J5ZoiBDNCliph8Vt0w8V43lXTq2U9t/view?usp=drive_link"
+    }
+  ]
+    },
+    {
+      id: "JEE-advisor",
+      title: "JEE Advisor Predictiion and Comparing Tool",
+      summary: "Suggests best IIT options based on user rank using previous opening/closing ranks from Kaggle dataset.",
+      description: "A data-driven application that helps students choose the best IIT options based on their rank by analyzing historical admission data.",
+      technologies: [
+        "Python",
+        "JavaScript",
+        "Data Analysis",
+        "Kaggle Dataset",
+        "Flask"
+      ],
+      category: "Data Science",
+      icon: "Code",
+      color: "green",
+      problem: "Students struggle to choose the right IIT and branch combination based on their rank due to complex historical data patterns.",
+      solution: "Developed a recommendation system that analyzes historical opening and closing ranks to suggest the best possible IIT options for a given rank.",
+      challenges: [
+        "Processing and cleaning large datasets from multiple years",
+        "Creating accurate prediction algorithms based on historical trends",
+        "Building an intuitive interface for rank-based recommendations"
+      ],
+      "outcomes": [
+        "Processed 5+ years of IIT admission data",
+        "Created accurate predictions with 90%+ reliability",
+        "Helped 100+ students in the testing phase"
+      ],
+      "liveDemo": "https://jee-advisor1.vercel.app/",
+      "sourceCode": "https://github.com/VyRajaRao/jee-advisor1.git"
+    }
 
   ];
 
@@ -217,13 +226,14 @@ const Projects = () => {
                       </a>
                     </Button>
                   )}
-                  {project.pdfReport && (
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={project.pdfReport} target="_blank" rel="noopener noreferrer" download>
+                  {project.pdfReport && Array.isArray(project.pdfReport) && project.pdfReport.map((pdf, idx) => (
+                    <Button key={idx} variant="ghost" size="sm" asChild>
+                      <a href={pdf.url} target="_blank" rel="noopener noreferrer" download>
                         <Github className="h-4 w-4" />
+                        {pdf.name}
                       </a>
                     </Button>
-                  )}
+                  ))}
                 </div>
               </div>
             );
@@ -349,14 +359,14 @@ const Projects = () => {
                     </a>
                   </Button>
                 )}
-                {selectedProject.pdfReport && (
-                  <Button variant="secondary" asChild className="download-pdf">
-                    <a href={selectedProject.pdfReport} target="_blank" rel="noopener noreferrer" download>
+                {selectedProject.pdfReport && Array.isArray(selectedProject.pdfReport) && selectedProject.pdfReport.map((pdf, idx) => (
+                  <Button key={idx} variant="secondary" asChild className="download-pdf">
+                    <a href={pdf.url} target="_blank" rel="noopener noreferrer" download>
                       <Github className="mr-2 h-4 w-4" />
-                      Download PDF
+                      {pdf.name}
                     </a>
                   </Button>
-                )}
+                ))}
               </div>
             </div>
           </div>
