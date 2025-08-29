@@ -46,7 +46,8 @@ const Projects = () => {
         "Reduced analysis time from minutes to seconds",
         "Created an intuitive web interface for easy image upload and results"
       ],
-      sourceCode: "https://github.com/VyRajaRao/eye-disease-detection"
+      liveDemo: "https://eyezen-detect.vercel.app/",
+      sourceCode: "https://github.com/VyRajaRao/eyezen-detect.git"
     },
     {
       id: "weather-api-app",
