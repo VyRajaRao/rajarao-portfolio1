@@ -13,8 +13,7 @@ const Skills = () => {
         { name: "C", level: 85, description: "System programming & DSA" },
         { name: "C++", level: 88, description: "Competitive programming" },
         { name: "Python", level: 80, description: "AI/ML & scripting" },
-        { name: "Java", level: 75, description: "OOP & backend development" },
-        { name: "JavaScript", level: 82, description: "Frontend & Node.js" },
+        { name: "Java", level: 75, description: "OOP & backend development" }
       ]
     },
     {
@@ -22,8 +21,8 @@ const Skills = () => {
       icon: Globe,
       color: "cyan",
       skills: [
-        { name: "HTML5", level: 90, description: "Semantic markup" },
-        { name: "CSS3", level: 85, description: "Modern styling & animations" },
+        { name: "HTML", level: 90, description: "Semantic markup" },
+        { name: "CSS", level: 85, description: "Styling & animations" },
         { name: "React.js", level: 78, description: "Component-based UI" },
         { name: "Tailwind CSS", level: 80, description: "Utility-first styling" },
       ]
@@ -54,8 +53,8 @@ const Skills = () => {
       skills: [
         { name: "Git", level: 80, description: "Version control & collaboration" },
         { name: "DSA", level: 82, description: "Algorithms & data structures" },
-        { name: "API Integration", level: 75, description: "RESTful services" },
-        { name: "DevSecOps", level: 60, description: "Security in development lifecycle" },
+        { name: "API Integration", level: 75, description: "RESTful services" }
+        
       ]
     },
     {

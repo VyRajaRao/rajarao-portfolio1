@@ -29,19 +29,19 @@ const About = () => {
               
               <div className="space-y-4 text-foreground-muted leading-relaxed">
                 <p>
-                  I'm a third-year B.Tech CSE student at MLR Institute of Technology, passionate about 
+                  I'm a third-year B.Tech CSE student at MLR Institute of Technology, learning about 
                   building digital solutions and exploring the fascinating world of technology.
                 </p>
                 
                 <p>
                   My journey focuses on web development and data structures & algorithms, while I'm 
                   actively expanding into cybersecurity, DevOps, and DevSecOps. I believe in learning 
-                  by building—shipping projects, exploring APIs, and participating in hackathons.
+                  by building—shipping projects, exploring APIs.
                 </p>
                 
                 <p>
                   When I'm not coding, you'll find me researching the latest security trends, 
-                  experimenting with new frameworks, or contributing to open-source projects.
+                  experimenting with new frameworks.
                 </p>
               </div>
 
