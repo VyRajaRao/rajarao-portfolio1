@@ -64,7 +64,7 @@ const Projects = () => {
         "Integrating multiple real-time cryptocurrency APIs",
         "Ensuring secure authentication and authorization",
         "Optimizing analysis graphs for large datasets",
-        "Handling scalability for thousands of active users"
+        "Handling scalability for active users"
       ],
       outcomes: [
         "Delivered an all-in-one crypto platform with portfolio, alerts, and trading",
