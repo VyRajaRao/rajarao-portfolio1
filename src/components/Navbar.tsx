@@ -68,7 +68,7 @@ const Navbar = () => {
             {/* Desktop CTA */}
             <div className="hidden md:block">
               <a
-                href="https://drive.google.com/file/d/1Tqvn0f5UFj64AjWak_30HMyPnELFI5KO/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1QwJ2c4O4SamY5HtxQ3OvqZSNxiKx_5-k/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
