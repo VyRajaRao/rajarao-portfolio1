@@ -72,7 +72,7 @@ const Projects = () => {
         "Implemented secure authentication with JWT sessions",
         "Enhanced user experience with interactive charts and responsive UI"
       ],
-      liveDemo: "https://crypto-coin-api-gold.vercel.app/",
+      liveDemo: "https://crypto-api-virtual-money.vercel.app/",
       sourceCode: "https://github.com/VyRajaRao/crypto-coin-api.git"
     },
 
