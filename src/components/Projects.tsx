@@ -127,7 +127,7 @@ const Projects = () => {
         "Created accurate predictions with 90%+ reliability",
         "Helped 100+ students in the testing phase"
       ],
-      "liveDemo": "https://jee-rank-guide.vercel.app/",
+      "liveDemo": "https://jeeadvisor.netlify.app/",
       "sourceCode": "https://github.com/VyRajaRao/jee-rank-guide.git"
     },
     {
