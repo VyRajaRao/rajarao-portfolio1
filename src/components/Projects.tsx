@@ -72,8 +72,8 @@ const Projects = () => {
         "Implemented secure authentication with JWT sessions",
         "Enhanced user experience with interactive charts and responsive UI"
       ],
-      liveDemo: "https://crypto-api-virtual-money.vercel.app/",
-      sourceCode: "https://github.com/VyRajaRao/crypto-coin-api.git"
+      liveDemo: "https://cryptoapivirtual.netlify.app/",
+      sourceCode: "https://github.com/VyRajaRao/crypto-api-virtual-money.git"
     },
 
     {
