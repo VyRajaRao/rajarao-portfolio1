@@ -56,7 +56,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => window.open('https://drive.google.com/file/d/1QwJ2c4O4SamY5HtxQ3OvqZSNxiKx_5-k/view?usp=drive_link', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1m4J5ZoiBDNCliph8Vt0w8V43lXTq2U9t/view?usp=drive_link', '_blank')}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Résumé
