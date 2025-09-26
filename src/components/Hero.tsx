@@ -21,12 +21,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
+          <section className="pt-20">
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 rounded-full glass-card border border-neon-blue/30">
-                <span className="text-sm text-foreground-muted">👋 Hi, I'm Raja</span>
-              </div>
-              
+
+            
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold leading-tight">
                 <span className="text-foreground">Web Dev & DSA Learner</span>
                 <br />
@@ -34,9 +34,13 @@ const Hero = () => {
                   Cybersecurity & Dev(Sec)Ops Enthusiast
                 </span>
               </h1>
-              
+              {/* 👋 Badge goes here */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full glass-card border border-neon-blue/30">
+                <span className="text-sm text-foreground-muted">👋 Hi, I'm Raja</span>
+              </div>
+
               <p className="text-lg text-foreground-muted max-w-2xl leading-relaxed">
-                Third-year B.Tech CSE @ MLRIT (2027). I build projects and continuously learn 
+                Third-year B.Tech CSE @ MLRIT (2027). I build projects and continuously learn
                 across web development, AI, and security domains.
               </p>
             </div>
@@ -84,6 +88,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
+          </section>
 
           {/* Right Column - Profile Picture */}
           <div className="flex justify-center lg:justify-end">
