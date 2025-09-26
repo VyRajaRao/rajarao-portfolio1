@@ -65,18 +65,6 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:block">
-              <a
-                href="https://drive.google.com/file/d/1m4J5ZoiBDNCliph8Vt0w8V43lXTq2U9t/view?usp=drive_link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="neon" size="sm" className="mr-2 h-4 w-4">
-                  Download Résumé
-                </Button>
-              </a>
-            </div>
 
             {/* Mobile Menu Button */}
             <button

@@ -42,7 +42,7 @@ const Hero = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 variant="neon" 
                 size="lg" 
@@ -53,14 +53,6 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => window.open('https://drive.google.com/file/d/19L_3digbrtDh041R1AAvSNrdGvtYtI3n/view?usp=drive_link', '_blank')}
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Résumé
-              </Button>
             </div>
 
             {/* Quick Links */}
